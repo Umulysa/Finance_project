@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="delete-confirmation">
+    <h2>Delete Transaction</h2>
+    <p>Are you sure you want to delete "{{ transaction.description }}" for {{ transaction.amount }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="button delete">Delete</button>
+        <a href="{% url 'dashboard' %}" class="button cancel">Cancel</a>
+    </form>
+</div>
+{% endblock %}

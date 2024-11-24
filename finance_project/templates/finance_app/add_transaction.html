@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Add New Transaction</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="button-group">
+            <button type="submit" class="button">Add Transaction</button>
+            <a href="{% url 'dashboard' %}" class="button cancel">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
